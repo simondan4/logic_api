@@ -14,3 +14,9 @@ from src.logic_evaluator import evaluate_expression
 def test_evaluate_expression(expected_bool, expression):
     result = evaluate_expression(expression)
     assert result is expected_bool
+
+
+def test_evaluate_expression_wrong():
+    expression = {"!=": [1, 1]}
+    with pytest.raises(Exception):
+        evaluate_expression(expression)
